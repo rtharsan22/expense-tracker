@@ -20,18 +20,36 @@ class expenseHome extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Expense App')),
-      body: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Column(children: [Text("grosaries"), Text("sep 15 2025")]),
-          Container(
-            child: Text("250.00"),
-            decoration: BoxDecoration(
-              border: Border.all(color: Colors.purple, width: 2),
+      body: Card(
+        margin: const EdgeInsets.all(10),
+        elevation: const BorderSide(color: Colors.purple, width: 2).width,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Text(
+                  "Grosaries",
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                ),
+                Text(
+                  "sep 15 2025",
+                  style: TextStyle(fontSize: 16, color: Colors.grey[600]),
+                ),
+              ],
             ),
-          ),
-        ],
+            Container(
+              child: Text("250.00"),
+              decoration: BoxDecoration(
+                border: Border.all(color: Colors.purple, width: 2),
+                borderRadius: BorderRadius.circular(5),
+              ),
+              padding: EdgeInsets.symmetric(horizontal: 5, vertical: 10),
+            ),
+          ],
+        ),
       ),
     );
   }
